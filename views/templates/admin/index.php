@@ -30,5 +30,17 @@ header('Cache-Control: no-store, no-cache, must-revalidate');
 header('Cache-Control: post-check=0, pre-check=0', false);
 header('Pragma: no-cache');
 
+// Procesar los datos del formulario enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $related_product_1 = $_POST['related_product_1'];
+    $related_product_2 = $_POST['related_product_2'];
+    $related_product_3 = $_POST['related_product_3'];
+
+    // Validar y guardar los datos en la base de datos
+    // (Código para guardar los productos relacionados manualmente en la base de datos)
+    // Ejemplo: INSERT INTO related_products (product_id, related_product_id) VALUES ($current_product_id, $related_product_1);
+}
+
+// Redireccionar al back office principal
 header('Location: ../');
 exit;

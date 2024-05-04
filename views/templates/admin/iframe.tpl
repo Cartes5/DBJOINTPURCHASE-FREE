@@ -1,5 +1,4 @@
-{*
- * Copyright since 2007 PrestaShop SA and Contributors
+{* Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
  * NOTICE OF LICENSE
@@ -38,4 +37,14 @@
         >
         </iframe>
     {/if}
+
+    {* Si se necesita una vista previa de los productos seleccionados manualmente *}
+    <div>
+        <h4>Productos Relacionados Manualmente Seleccionados:</h4>
+        <ul>
+            <li>{$product_1_name}</li>
+            <li>{$product_2_name}</li>
+            <li>{$product_3_name}</li>
+        </ul>
+    </div>
 </div>

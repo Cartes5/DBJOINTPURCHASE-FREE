@@ -1,5 +1,4 @@
-{*
- * Copyright since 2007 PrestaShop SA and Contributors
+{* Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
  * NOTICE OF LICENSE
@@ -38,5 +37,24 @@
         >
         </iframe>
     {/if}
-</div>
 
+    {* Agregar campos de selección de productos relacionados manualmente *}
+    <select name="related_product_1">
+        <option value="">Seleccionar Producto Relacionado 1</option>
+        {foreach from=$products item=product}
+            <option value="{$product.id_product}">{$product.name}</option>
+        {/foreach}
+    </select>
+    <select name="related_product_2">
+        <option value="">Seleccionar Producto Relacionado 2</option>
+        {foreach from=$products item=product}
+            <option value="{$product.id_product}">{$product.name}</option>
+        {/foreach}
+    </select>
+    <select name="related_product_3">
+        <option value="">Seleccionar Producto Relacionado 3</option>
+        {foreach from=$products item=product}
+            <option value="{$product.id_product}">{$product.name}</option>
+        {/foreach}
+    </select>
+</div>

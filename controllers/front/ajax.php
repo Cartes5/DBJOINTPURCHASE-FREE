@@ -36,7 +36,19 @@ class DbJointPurchaseAjaxModuleFrontController extends ModuleFrontController
             //$id_category = (int)Tools::getValue('id_category');
             $key = (int)Tools::getValue('key');
             $best_product = (int)Tools::getValue('best_product');
-            $products = $this->module->getTopSellerByCategory($id_product);
+            
+            // Agregar lógica para obtener los productos relacionados manualmente seleccionados
+            $manual_related_products = array(
+                // Array con los IDs de los productos relacionados manualmente seleccionados
+                // Por ejemplo: 101, 102, 103
+            );
+
+            // Agregar lógica para obtener los productos relacionados automáticamente
+            $auto_related_products = $this->module->getTopSellerByCategory($id_product);
+
+            // Combinar los productos manualmente y automáticamente relacionados
+            $products = array_merge($manual_related_products, $auto_related_products);
+
             $modal = $this->module->renderJointModal($products, $key, $best_product, $id_product);
             die(Tools::jsonEncode(array('modal' => $modal)));
         }
